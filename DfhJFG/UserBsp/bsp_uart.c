@@ -17,7 +17,8 @@
 uint8_t dma_dbus_rec_buf[DMA_DBUS_LEN];				
 uint8_t TFminiPlusBuffArray_Front[TFMINIPLUS_BUFF_SIZE];
 uint8_t TFminiPlusBuffArray_Back[TFMINIPLUS_BUFF_SIZE];
-
+uint8_t WT53RArrayLeft[WT53R_BUFF_LEN];
+uint8_t WT53RArrayRight[WT53R_BUFF_LEN];
  /**
   * @brief  各个串口功能函数
   * @param 	UART_HandleTypeDef *huart
@@ -25,26 +26,34 @@ uint8_t TFminiPlusBuffArray_Back[TFMINIPLUS_BUFF_SIZE];
   */
 void USER_UART_IDLECallback(UART_HandleTypeDef *huart)
 {
-	/* DBUS串口 */
-	if(huart->Instance == USART1)
-	{
-		rc_callback_handler(&rc, dma_dbus_rec_buf);
-		memset(dma_dbus_rec_buf, 0, DMA_DBUS_LEN);
-		HAL_UART_Receive_DMA(&DBUS_HUART, dma_dbus_rec_buf, DMA_DBUS_LEN);
-	}
-  if(huart->Instance == USART3)  // 前大激光数据处理
+ /* DBUS串口 */
+  if(huart->Instance == USART1)//遥控器
+  {
+	rc_callback_handler(&rc, dma_dbus_rec_buf);
+	memset(dma_dbus_rec_buf, 0, DMA_DBUS_LEN);
+	HAL_UART_Receive_DMA(&DBUS_HUART, dma_dbus_rec_buf, DMA_DBUS_LEN);
+  }
+ /* 大激光串口 */
+  if(huart->Instance == USART3)//前大激光数据处理
   {
     vTfFrontGetData(TFminiPlusBuffArray_Front);
     memset(TFminiPlusBuffArray_Front,0,TFMINIPLUS_BUFF_SIZE);
     HAL_UART_Receive_DMA(huart, (uint8_t*)TFminiPlusBuffArray_Front, TFMINIPLUS_BUFF_SIZE);
   }
-  if(huart->Instance == UART4)  // 后大激光数据处理
+  if(huart->Instance == UART4)//后大激光数据处理
   {
     vTfBackGetData(TFminiPlusBuffArray_Back);
     memset(TFminiPlusBuffArray_Back,0,TFMINIPLUS_BUFF_SIZE);
     HAL_UART_Receive_DMA(huart, (uint8_t*)TFminiPlusBuffArray_Back, TFMINIPLUS_BUFF_SIZE);
   }
-    if(huart->Instance == UART5)  // 后大激光数据处理
+  /* 小激光串口 */
+  if(huart->Instance == UART2)//左小激光数据处理
+  {
+    vTfBackGetData(TFminiPlusBuffArray_Back);
+    memset(TFminiPlusBuffArray_Back,0,TFMINIPLUS_BUFF_SIZE);
+    HAL_UART_Receive_DMA(huart, (uint8_t*)TFminiPlusBuffArray_Back, TFMINIPLUS_BUFF_SIZE);
+  }
+  if(huart->Instance == UART5)//右小激光数据处理
   {
     vTfBackGetData(TFminiPlusBuffArray_Back);
     memset(TFminiPlusBuffArray_Back,0,TFMINIPLUS_BUFF_SIZE);
