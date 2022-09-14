@@ -23,10 +23,12 @@
 #include "task.h"
 #include "main.h"
 #include "cmsis_os.h"
-
+#
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "bsp_limit.h"
+
+#include "debug_task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -46,7 +48,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
-
+osThreadId debug_task_t;
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
 
@@ -98,7 +100,7 @@ void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer, Stack
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
-
+	taskENTER_CRITICAL();
   /* USER CODE END Init */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -124,6 +126,11 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
+
+  osThreadDef(debugTask, debug_task, osPriorityLow, 0, 256);
+	debug_task_t = osThreadCreate(osThread(debugTask), NULL);
+  
+  	taskEXIT_CRITICAL();
   /* USER CODE END RTOS_THREADS */
 
 }
@@ -143,7 +150,7 @@ void StartDefaultTask(void const * argument)
   for(;;)
   {
     getLimitStatus(limitStatus);
-    osDelay(1);
+    osDelay(10);
   }
   /* USER CODE END StartDefaultTask */
 }
