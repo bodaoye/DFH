@@ -45,6 +45,7 @@
 "dfh_main\bsp_tfminiplus.o"
 "dfh_main\bsp_wt53r.o"
 "dfh_main\bsp_limit.o"
+"dfh_main\bsp_serverdriver.o"
 --strict --scatter "DFH_main\DFH_main.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

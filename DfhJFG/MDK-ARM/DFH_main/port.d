@@ -1,7 +1,7 @@
 dfh_main\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/port.c
 dfh_main\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-dfh_main\port.o: D:\software_root\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
-dfh_main\port.o: D:\software_root\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+dfh_main\port.o: D:\RootSoftWare\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+dfh_main\port.o: D:\RootSoftWare\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 dfh_main\port.o: ../Inc/FreeRTOSConfig.h
 dfh_main\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 dfh_main\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

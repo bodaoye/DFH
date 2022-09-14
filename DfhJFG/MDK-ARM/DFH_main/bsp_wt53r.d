@@ -3,7 +3,7 @@ dfh_main\bsp_wt53r.o: ..\UserBsp\bsp_WT53R.h
 dfh_main\bsp_wt53r.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 dfh_main\bsp_wt53r.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
 dfh_main\bsp_wt53r.o: ../Drivers/CMSIS/Include/core_cm4.h
-dfh_main\bsp_wt53r.o: D:\software_root\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+dfh_main\bsp_wt53r.o: D:\RootSoftWare\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 dfh_main\bsp_wt53r.o: ../Drivers/CMSIS/Include/cmsis_version.h
 dfh_main\bsp_wt53r.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 dfh_main\bsp_wt53r.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -15,7 +15,7 @@ dfh_main\bsp_wt53r.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
 dfh_main\bsp_wt53r.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 dfh_main\bsp_wt53r.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 dfh_main\bsp_wt53r.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-dfh_main\bsp_wt53r.o: D:\software_root\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+dfh_main\bsp_wt53r.o: D:\RootSoftWare\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 dfh_main\bsp_wt53r.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 dfh_main\bsp_wt53r.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h
 dfh_main\bsp_wt53r.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
@@ -34,4 +34,4 @@ dfh_main\bsp_wt53r.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 dfh_main\bsp_wt53r.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 dfh_main\bsp_wt53r.o: ../Inc/usart.h
 dfh_main\bsp_wt53r.o: ../Inc/main.h
-dfh_main\bsp_wt53r.o: D:\software_root\Keil5\ARM\ARMCC\Bin\..\include\math.h
+dfh_main\bsp_wt53r.o: D:\RootSoftWare\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

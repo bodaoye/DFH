@@ -759,6 +759,16 @@
               <FileType>5</FileType>
               <FilePath>..\UserBsp\bsp_limit.h</FilePath>
             </File>
+            <File>
+              <FileName>bsp_ServerDriver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UserBsp\bsp_ServerDriver.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_ServerDriver.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\UserBsp\bsp_ServerDriver.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
