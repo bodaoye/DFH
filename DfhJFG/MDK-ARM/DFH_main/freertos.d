@@ -46,3 +46,5 @@ dfh_main\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 dfh_main\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 dfh_main\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 dfh_main\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+dfh_main\freertos.o: ../UserBsp/bsp_limit.h
+dfh_main\freertos.o: ../Inc/gpio.h

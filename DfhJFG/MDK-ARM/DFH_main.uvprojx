@@ -332,7 +332,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;   ../Drivers/STM32F4xx_HAL_Driver/Inc;   ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;   ../Middlewares/Third_Party/FreeRTOS/Source/include;   ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;   ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;   ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;   ../Drivers/CMSIS/Include;   ../UserBsp</IncludePath>
+              <IncludePath>../Inc;     ../Drivers/STM32F4xx_HAL_Driver/Inc;     ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;     ../Middlewares/Third_Party/FreeRTOS/Source/include;     ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;     ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;     ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;     ../Drivers/CMSIS/Include;     ../UserBsp</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -748,6 +748,16 @@
               <FileName>bsp_WT53R.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\UserBsp\bsp_WT53R.h</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_limit.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UserBsp\bsp_limit.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_limit.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\UserBsp\bsp_limit.h</FilePath>
             </File>
           </Files>
         </Group>

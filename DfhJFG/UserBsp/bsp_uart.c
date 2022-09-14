@@ -50,14 +50,14 @@ void USER_UART_IDLECallback(UART_HandleTypeDef *huart)
   /* 小激光串口 */
   if(huart->Instance == USART2)//左小激光数据处理
   {
-    vTfBackGetData(TFminiPlusBuffArray_Back);
-    memset(TFminiPlusBuffArray_Back,0,TFMINIPLUS_BUFF_SIZE);
-    HAL_UART_Receive_DMA(huart, (uint8_t*)TFminiPlusBuffArray_Back, TFMINIPLUS_BUFF_SIZE);
+    getWT53Rdis(WT53RArrayRight,char_d_start);
+    memset(WT53RArrayLeft,0,WT53R_BUFF_LEN);
+    HAL_UART_Receive_DMA(huart, (uint8_t*)WT53RArrayRight, WT53R_BUFF_LEN);
   }
   if(huart->Instance == UART5)//右小激光数据处理
   {
     getWT53Rdis(WT53RArrayLeft,char_d_start);
-//    memset(WT53RArrayLeft,0,WT53R_BUFF_LEN);
+    memset(WT53RArrayLeft,0,WT53R_BUFF_LEN);
     HAL_UART_Receive_DMA(huart, (uint8_t*)WT53RArrayLeft, WT53R_BUFF_LEN);
   }
 }
