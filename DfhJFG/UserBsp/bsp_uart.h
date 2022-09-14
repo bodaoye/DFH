@@ -3,10 +3,12 @@
 
 #include "usart.h"
 
-#define 	DBUS_HUART      huart1
-#define   	TFHEAD_HUART    huart3		
-#define   	TFTAIL_HUART		huart4
-#define   	VISION_HUART		huart6
+#define 	  DBUS_HUART        huart1
+#define   	TFHEAD_HUART      huart3		
+#define   	TFTAIL_HUART		  huart4
+#define     WT53RLEFT_HUART   huart2
+#define     WT53RRIGHT_HUART  huart5
+#define   	VISION_HUART		  huart6
 
 #define  	DMA_DBUS_LEN		18
 /*TFminiplus 数据缓存大小*/

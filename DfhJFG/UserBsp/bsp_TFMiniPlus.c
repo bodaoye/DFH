@@ -24,8 +24,8 @@ void vTfFrontGetData(uint8_t *buff)
 	uint16_t distance,strength;
 	if(buff[0]==0x59&&buff[1]==0x59) //校验帧头
 	{
-		distance=buff[3]<<8 | buff[2];
-		strength=buff[5]<<8 | buff[4];
+		distance=buff[3]<<8 | buff[2];//合并高低八位
+		strength=buff[5]<<8 | buff[4];//合并高低八位
 		if(strength>100&&strength!=65535) //在强度范围内才为有效数据
 		{
 			tfmin_distance[1] = distance;  //手动乘10，单位化为 mm，个位无意义

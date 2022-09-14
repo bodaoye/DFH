@@ -47,7 +47,7 @@ void USER_UART_IDLECallback(UART_HandleTypeDef *huart)
     HAL_UART_Receive_DMA(huart, (uint8_t*)TFminiPlusBuffArray_Back, TFMINIPLUS_BUFF_SIZE);
   }
   /* 小激光串口 */
-  if(huart->Instance == UART2)//左小激光数据处理
+  if(huart->Instance == USART2)//左小激光数据处理
   {
     vTfBackGetData(TFminiPlusBuffArray_Back);
     memset(TFminiPlusBuffArray_Back,0,TFMINIPLUS_BUFF_SIZE);
@@ -86,13 +86,15 @@ void USER_UART_Init(void)
   /* 遥控器串口初始化 */
 	__HAL_UART_ENABLE_IT(&DBUS_HUART, UART_IT_IDLE);
 	HAL_UART_Receive_DMA(&DBUS_HUART, dma_dbus_rec_buf, DMA_DBUS_LEN);
-  /* 激光串口初始化 */ 
+  /* 大激光串口初始化 */ 
   __HAL_UART_ENABLE_IT(&TFHEAD_HUART,UART_IT_IDLE);   /* 车头激光 */
   HAL_UART_Receive_DMA(&TFHEAD_HUART,TFminiPlusBuffArray_Front,TFMINIPLUS_BUFF_SIZE);
   __HAL_UART_ENABLE_IT(&TFTAIL_HUART,UART_IT_IDLE);   /* 车尾激光 */
   HAL_UART_Receive_DMA(&TFTAIL_HUART,TFminiPlusBuffArray_Back,TFMINIPLUS_BUFF_SIZE);
-  
-    __HAL_UART_ENABLE_IT(&huart5,UART_IT_IDLE);   /* 车尾激光 */
-  HAL_UART_Receive_DMA(&huart5,TFminiPlusBuffArray_Back,TFMINIPLUS_BUFF_SIZE);
+  /* 小激光串口初始化 */
+  __HAL_UART_ENABLE_IT(&WT53RLEFT_HUART,UART_IT_IDLE);   /* 车左侧激光 */
+  HAL_UART_Receive_DMA(&WT53RLEFT_HUART,WT53RArrayLeft,WT53R_BUFF_LEN);
+  __HAL_UART_ENABLE_IT(&WT53RRIGHT_HUART,UART_IT_IDLE);   /* 车左侧激光 */
+  HAL_UART_Receive_DMA(&WT53RRIGHT_HUART,WT53RArrayRight,WT53R_BUFF_LEN);
 }
 
