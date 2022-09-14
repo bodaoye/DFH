@@ -1137,7 +1137,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x626FD40F)
 I (D:\software_root\Keil5\ARM\ARMCC\include\stdlib.h)(0x569DEA3A)
 I (D:\software_root\Keil5\ARM\ARMCC\include\string.h)(0x569DEA3A)
 F (..\UserBsp\remote_msg.h)(0x631FBBFA)()
-F (..\UserBsp\bsp_uart.c)(0x63211A01)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../UserBsp-I C:\Users\bai\Desktop\git\DFH\DfhJFG\MDK-ARM\RTE-I D:\software_root\Keil5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\software_root\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o dfh_main\bsp_uart.o --omf_browse dfh_main\bsp_uart.crf --depend dfh_main\bsp_uart.d)
+F (..\UserBsp\bsp_uart.c)(0x63213046)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../UserBsp-I C:\Users\bai\Desktop\git\DFH\DfhJFG\MDK-ARM\RTE-I D:\software_root\Keil5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\software_root\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o dfh_main\bsp_uart.o --omf_browse dfh_main\bsp_uart.crf --depend dfh_main\bsp_uart.d)
 I (..\UserBsp\bsp_uart.h)(0x63211A11)
 I (../Inc/usart.h)(0x632116D5)
 I (../Inc/main.h)(0x632116D6)
@@ -1176,6 +1176,7 @@ I (D:\software_root\Keil5\ARM\ARMCC\include\stdlib.h)(0x569DEA3A)
 I (D:\software_root\Keil5\ARM\ARMCC\include\string.h)(0x569DEA3A)
 I (..\UserBsp\bsp_TFMiniPlus.h)(0x631FCAC5)
 I (..\UserBsp\remote_msg.h)(0x631FBBFA)
+I (..\UserBsp\bsp_WT53R.h)(0x632131AD)
 F (..\UserBsp\bsp_uart.h)(0x63211A11)()
 F (..\UserBsp\bsp_can.c)(0x631FC3F1)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../UserBsp-I C:\Users\bai\Desktop\git\DFH\DfhJFG\MDK-ARM\RTE-I D:\software_root\Keil5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\software_root\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o dfh_main\bsp_can.o --omf_browse dfh_main\bsp_can.crf --depend dfh_main\bsp_can.d)
 I (..\UserBsp\bsp_can.h)(0x631FC3C3)
@@ -1319,3 +1320,40 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x626FD40F)
 I (../Inc/usart.h)(0x632116D5)
 I (../Inc/main.h)(0x632116D6)
 F (..\UserBsp\bsp_TFMiniPlus.h)(0x631FCAC5)()
+F (..\UserBsp\bsp_WT53R.c)(0x632140D4)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../UserBsp-I C:\Users\bai\Desktop\git\DFH\DfhJFG\MDK-ARM\RTE-I D:\software_root\Keil5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\software_root\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o dfh_main\bsp_wt53r.o --omf_browse dfh_main\bsp_wt53r.crf --depend dfh_main\bsp_wt53r.d)
+I (..\UserBsp\bsp_WT53R.h)(0x632131AD)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x626FD327)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x626FD327)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x626FD341)
+I (D:\software_root\Keil5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x626FD341)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x626FD341)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x626FD341)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x626FD341)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x626FD327)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x626FD40F)
+I (../Inc/stm32f4xx_hal_conf.h)(0x632116D6)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x626FD40F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x626FD40F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x626FD40F)
+I (D:\software_root\Keil5\ARM\ARMCC\include\stddef.h)(0x569DEA3A)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x626FD40F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x626FD40F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x626FD40F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x626FD40F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x626FD40F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x626FD40F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x626FD40F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h)(0x626FD40F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x626FD40F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x626FD40F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x626FD40F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x626FD40F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x626FD40F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x626FD40F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x626FD40F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x626FD40F)
+I (../Inc/usart.h)(0x632116D5)
+I (../Inc/main.h)(0x632116D6)
+I (D:\software_root\Keil5\ARM\ARMCC\include\math.h)(0x569DEA3A)
+F (..\UserBsp\bsp_WT53R.h)(0x632131AD)()

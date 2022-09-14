@@ -43,6 +43,7 @@
 "dfh_main\bsp_can.o"
 "dfh_main\bsp_t_imu.o"
 "dfh_main\bsp_tfminiplus.o"
+"dfh_main\bsp_wt53r.o"
 --strict --scatter "DFH_main\DFH_main.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

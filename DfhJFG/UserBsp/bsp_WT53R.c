@@ -6,27 +6,39 @@
   * @note   
   *************************************************************************
   */
-
-#include “bsp_WT53R.h”
-
-uint16_t wt53r_distance[2];
+#include "bsp_WT53R.h"
+#include "math.h"
+uint16_t wt53r_distance[2] = {0};
 
 /**
   * @brief  tof 回传数据解算
   * @param  uint8_t *buff 串口缓存区指针
-  * @retval 距离信息cm
+  * @retval 	1. 成功返回1，失败返回0；
+				2. 距离信息cm
   */
-  */
-void vWT53RFrontGetData(char *buff)
-{
-	uint16_t distance,strength;
-	if(buff[0]==0x59&&buff[1]==0x59) //校验帧头
-	{
-		distance = buff[3]<<8 | buff[2];//合并高低八位
-		strength = buff[5]<<8 | buff[4];//合并高低八位
-		if(strength>100&&strength!=65535) //在强度范围内才为有效数据
-		{
-			wt53r_distance[0] = distance;  //手动乘10，单位化为 mm，个位无意义
+int showNum = 0;
+void getWT53Rdis(uint8_t *buff,uint8_t num) {
+  uint8_t chBuff[4] = {1},numbuff[4] = {0},cnt = 0;/* 字符缓存和数字缓存 */
+  uint16_t distance = 0;
+	/* 取出该四字节 */
+	for(int i = 0; i < 4; i++) {
+		chBuff[i] = buff[num + i];
+	}
+	/* 开始转化 */
+	for(int j = 0; j < 4; j++) {
+		if( (chBuff[j]>='0') && (chBuff[j]<='9') ) {
+			cnt += 1;/* 计数位自增，表示数字的位数 */
+			numbuff[j] = chBuff[j] - 48;/*转化为0~9的十进制数存入数组中*/
+		} else {
+			numbuff[j] = 0;
 		}
 	}
+//	/*根据数字的位数将数组内数字转化为整数*/
+	while(cnt!=0) {
+		distance += (numbuff[4 - cnt] * (pow(10,cnt-1)));
+    /*调试*/
+    showNum = distance;
+		cnt--;
+	}
+  wt53r_distance[0] = distance;
 }

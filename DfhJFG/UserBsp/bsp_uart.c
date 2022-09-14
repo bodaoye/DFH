@@ -13,6 +13,7 @@
 #include "string.h"
 #include "bsp_TFMiniPlus.h"
 #include "remote_msg.h"
+#include "bsp_WT53R.h"
 
 uint8_t dma_dbus_rec_buf[DMA_DBUS_LEN];				
 uint8_t TFminiPlusBuffArray_Front[TFMINIPLUS_BUFF_SIZE];
@@ -55,9 +56,9 @@ void USER_UART_IDLECallback(UART_HandleTypeDef *huart)
   }
   if(huart->Instance == UART5)//右小激光数据处理
   {
-    vTfBackGetData(TFminiPlusBuffArray_Back);
-    memset(TFminiPlusBuffArray_Back,0,TFMINIPLUS_BUFF_SIZE);
-    HAL_UART_Receive_DMA(huart, (uint8_t*)TFminiPlusBuffArray_Back, TFMINIPLUS_BUFF_SIZE);
+    getWT53Rdis(WT53RArrayLeft,char_d_start);
+//    memset(WT53RArrayLeft,0,WT53R_BUFF_LEN);
+    HAL_UART_Receive_DMA(huart, (uint8_t*)WT53RArrayLeft, WT53R_BUFF_LEN);
   }
 }
 
