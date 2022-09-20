@@ -332,7 +332,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../UserBsp;..\UserApp</IncludePath>
+              <IncludePath>../Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../UserBsp;..\UserApp;..\UserMathlib</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -793,6 +793,51 @@
               <FileName>debug_task.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\UserApp\debug_task.h</FilePath>
+            </File>
+            <File>
+              <FileName>chassis_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UserApp\chassis_task.c</FilePath>
+            </File>
+            <File>
+              <FileName>chassis_task.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\UserApp\chassis_task.h</FilePath>
+            </File>
+            <File>
+              <FileName>modeSwitch_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UserApp\modeSwitch_task.c</FilePath>
+            </File>
+            <File>
+              <FileName>modeSwitch_task.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\UserApp\modeSwitch_task.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>UserMathlib</GroupName>
+          <Files>
+            <File>
+              <FileName>pid.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UserMathlib\pid.c</FilePath>
+            </File>
+            <File>
+              <FileName>pid.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\UserMathlib\pid.h</FilePath>
+            </File>
+            <File>
+              <FileName>math_calcu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UserMathlib\math_calcu.c</FilePath>
+            </File>
+            <File>
+              <FileName>math_calcu.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\UserMathlib\math_calcu.h</FilePath>
             </File>
           </Files>
         </Group>

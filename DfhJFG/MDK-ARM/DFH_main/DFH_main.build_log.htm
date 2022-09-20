@@ -5,11 +5,11 @@
 <h2>Tool Versions:</h2>
 IDE-Version: ¦ÌVision V5.18.0.0
 Copyright (C) 2016 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: 1231 bai, 123, LIC=32B1Q-NUDRT-45ST5-G0PUG-FR87N-56XAV
+License Information: 2312 jfg, 21312, LIC=47GU5-G7I0B-9U74U-SZJQJ-10VQS-CENYD
  
 Tool Versions:
 Toolchain:       MDK-ARM Standard  Version: 5.18
-Toolchain Path:  D:\software_root\Keil5\ARM\ARMCC\Bin
+Toolchain Path:  D:\RootSoftWare\Keil_v5\ARM\ARMCC\Bin
 C Compiler:      Armcc.exe V5.06 update 1 (build 61)
 Assembler:       Armasm.exe V5.06 update 1 (build 61)
 Linker/Locator:  ArmLink.exe V5.06 update 1 (build 61)
@@ -21,17 +21,61 @@ Target DLL:      CMSIS_AGDI.dll V1.25.7.0
 Dialog DLL:      TCM.DLL V1.14.8.0
  
 <h2>Project:</h2>
-C:\Users\bai\Desktop\git\DFH\DfhJFG\MDK-ARM\DFH_main.uvprojx
-Project File Date:  09/15/2022
+D:\Desktop\DFH\DFH2\DFH\DfhJFG\MDK-ARM\DFH_main.uvprojx
+Project File Date:  09/19/2022
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 1 (build 61)', folder: 'D:\software_root\Keil5\ARM\ARMCC\Bin'
+*** Using Compiler 'V5.06 update 1 (build 61)', folder: 'D:\RootSoftWare\Keil_v5\ARM\ARMCC\Bin'
 Build target 'DFH_main'
-compiling debug_task.c...
+compiling modeSwitch_task.c...
+compiling main.c...
+compiling freertos.c...
+compiling chassis_task.c...
+..\UserApp\chassis_task.c(103): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(107): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(111): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(115): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(118): warning:  #940-D: missing return statement at end of non-void function "event_idle"
+  }
+..\UserApp\chassis_task.c(133): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(137): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(141): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(145): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(148): warning:  #940-D: missing return statement at end of non-void function "event_stop"
+  }
+..\UserApp\chassis_task.c(163): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(167): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(171): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(175): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(178): warning:  #940-D: missing return statement at end of non-void function "event_goStraight"
+  }
+..\UserApp\chassis_task.c(193): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(197): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(201): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(205): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(208): warning:  #940-D: missing return statement at end of non-void function "event_rotate"
+  }
+..\UserApp\chassis_task.c: 20 warnings, 0 errors
 linking...
-Program Size: Code=26000 RO-data=688 RW-data=212 ZI-data=25580  
+Program Size: Code=26356 RO-data=768 RW-data=260 ZI-data=25652  
 FromELF: creating hex file...
-"DFH_main\DFH_main.axf" - 0 Error(s), 0 Warning(s).
+"DFH_main\DFH_main.axf" - 0 Error(s), 20 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -42,9 +86,9 @@ Package Vendor: ARM
    * Component: CORE Version: 4.3.0
 
 <h2>Collection of Component include folders:</h2>
-  C:\Users\bai\Desktop\git\DFH\DfhJFG\MDK-ARM\RTE
-  D:\software_root\Keil5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include
-  D:\software_root\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+  D:\Desktop\DFH\DFH2\DFH\DfhJFG\MDK-ARM\RTE
+  D:\RootSoftWare\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include
+  D:\RootSoftWare\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 
 <h2>Collection of Component Files used:</h2>
 

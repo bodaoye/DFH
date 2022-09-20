@@ -31,6 +31,7 @@
 /* USER CODE BEGIN Includes */
 #include "bsp_uart.h"
 #include "bsp_can.h"
+#include "chassis_task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -107,6 +108,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   USER_UART_Init();
   can_device_init();
+	chassisStateInit();	//µ×ÅÌ×´Ì¬»ú³õÊ¼»¯
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */

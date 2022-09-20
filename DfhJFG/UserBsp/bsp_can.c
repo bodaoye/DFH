@@ -38,31 +38,19 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 		HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &Rx1Message, CAN1_Rx_data);
 		switch (Rx1Message.StdId)
 		{
-			case CAN_3508_STIR_ID:/*拨盘电机 8Pin端子*/
+			case CAN_2006_LEFT_UP:/*拨盘电机 8Pin端子*/
+			case CAN_2006_RIGHT_UP:
+			case CAN_2006_LEFT_DOWN:
+			case CAN_2006_RIGHT_DOWN:
 			{
-				moto_msg.stir.msg_cnt++ <= 50 ? get_moto_offset(&moto_msg.stir) : encoder_data_handler(&moto_msg.stir, CAN1_Rx_data);
-				break;
-			}
-			case CAN_FRIC_M3508_LEFT_ID:/* 2Pin端子 */
-			case CAN_FRIC_M3508_RIGHT_ID:
-      {
-				static uint8_t j;
-				j = Rx1Message.StdId - CAN_FRIC_M3508_LEFT_ID;
-				encoder_data_handler(&moto_msg.fric[j], CAN1_Rx_data);
-				break;
-			}
-      case CAN_LIMIT_2006_ID: 
-      {
-        encoder_data_handler(&moto_msg.limit, CAN1_Rx_data);
-      }
-			default:
-			{
+				static uint8_t i;
+				i = Rx1Message.StdId - CAN_2006_LEFT_UP;
+				encoder_data_handler(&moto_msg.chassis_2006[i], CAN1_Rx_data);
 				break;
 			}
 		}
 		__HAL_CAN_ENABLE_IT(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING);
 	}
-
 	else if(hcan == &hcan2)
 	{
 		HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &Rx2Message, CAN2_Rx_data);

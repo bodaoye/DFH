@@ -5,7 +5,7 @@
 	*
   * @brief
 	*
-  *	@author YY
+  *	@author JFG
   *
   */
 #ifndef __DEBUG_TASK_H__

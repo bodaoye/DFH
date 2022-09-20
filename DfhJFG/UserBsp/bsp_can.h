@@ -15,14 +15,10 @@
 /* CAN1 send and receive ID */
 typedef enum
 {
-	CAN_3508_STIR_ID	= 0x201,
-
-	CAN_FRIC_M3508_LEFT_ID   = 0x202,
-	CAN_FRIC_M3508_RIGHT_ID  = 0x203,
-	
-  CAN_LIMIT_2006_ID  = 0x204,
-  
-	CAN_POWER_ID  		= 0x003,
+	CAN_2006_LEFT_UP	= 0x201,
+	CAN_2006_RIGHT_UP   = 0x202,
+	CAN_2006_LEFT_DOWN  = 0x203,
+  CAN_2006_RIGHT_DOWN  = 0x204,
 } can1_id_e;
 
 /* CAN2 send and receive ID */
@@ -54,7 +50,7 @@ typedef struct
 /*moto received messages structure*/
 typedef struct
 {
-	moto_measure_t fric[2];
+	moto_measure_t chassis_2006[4];
 	moto_measure_t stir;
 	moto_measure_t pit;
 	moto_measure_t yaw;
