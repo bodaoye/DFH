@@ -50,6 +50,7 @@
 "dfh_main\debug_task.o"
 "dfh_main\chassis_task.o"
 "dfh_main\modeswitch_task.o"
+"dfh_main\comm_task.o"
 "dfh_main\pid.o"
 "dfh_main\math_calcu.o"
 --strict --scatter "DFH_main\DFH_main.sct"

@@ -59,3 +59,4 @@ dfh_main\chassis_task.o: ../UserBsp/bsp_limit.h
 dfh_main\chassis_task.o: ../Inc/gpio.h
 dfh_main\chassis_task.o: ..\UserMathlib\pid.h
 dfh_main\chassis_task.o: ..\UserApp\modeSwitch_task.h
+dfh_main\chassis_task.o: ..\UserApp\comm_task.h

@@ -31,6 +31,7 @@
 #include "debug_task.h"
 #include "chassis_task.h"
 #include "modeSwitch_task.h"
+#include "comm_task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -53,6 +54,8 @@
 osThreadId debug_task_t;
 osThreadId chassis_task_t;
 osThreadId modeSwitch_task_t;
+osThreadId can_msg_send_task_t;
+
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
 
@@ -130,13 +133,17 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
-
+  
+	osThreadDef(canTask, can_msg_send_task, osPriorityHigh, 0, 512);
+  can_msg_send_task_t = osThreadCreate(osThread(canTask), NULL);
+  
   osThreadDef(debugTask, debug_task, osPriorityNormal, 0, 256);
 	debug_task_t = osThreadCreate(osThread(debugTask), NULL);
-	  osThreadDef(chassisTask, chassis_task, osPriorityNormal, 0, 256);
+	  osThreadDef(chassisTask, chassis_task, osPriorityNormal, 0, 512);
 	debug_task_t = osThreadCreate(osThread(chassisTask), NULL);
 	  osThreadDef(modeSwitchTask, modeSwitch_task, osPriorityNormal, 0, 256);
 	debug_task_t = osThreadCreate(osThread(modeSwitchTask), NULL);
+  
   	taskEXIT_CRITICAL();
   /* USER CODE END RTOS_THREADS */
 
