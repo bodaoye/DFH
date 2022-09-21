@@ -5,11 +5,11 @@
 <h2>Tool Versions:</h2>
 IDE-Version: ¦ÌVision V5.18.0.0
 Copyright (C) 2016 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: 2312 jfg, 21312, LIC=47GU5-G7I0B-9U74U-SZJQJ-10VQS-CENYD
+License Information: 1231 bai, 123, LIC=32B1Q-NUDRT-45ST5-G0PUG-FR87N-56XAV
  
 Tool Versions:
 Toolchain:       MDK-ARM Standard  Version: 5.18
-Toolchain Path:  D:\RootSoftWare\Keil_v5\ARM\ARMCC\Bin
+Toolchain Path:  D:\software_root\Keil5\ARM\ARMCC\Bin
 C Compiler:      Armcc.exe V5.06 update 1 (build 61)
 Assembler:       Armasm.exe V5.06 update 1 (build 61)
 Linker/Locator:  ArmLink.exe V5.06 update 1 (build 61)
@@ -21,15 +21,12 @@ Target DLL:      CMSIS_AGDI.dll V1.25.7.0
 Dialog DLL:      TCM.DLL V1.14.8.0
  
 <h2>Project:</h2>
-D:\Desktop\DFH\DFH2\DFH\DfhJFG\MDK-ARM\DFH_main.uvprojx
-Project File Date:  09/19/2022
+C:\Users\bai\Desktop\git\DFH\DfhJFG\MDK-ARM\DFH_main.uvprojx
+Project File Date:  09/21/2022
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 1 (build 61)', folder: 'D:\RootSoftWare\Keil_v5\ARM\ARMCC\Bin'
+*** Using Compiler 'V5.06 update 1 (build 61)', folder: 'D:\software_root\Keil5\ARM\ARMCC\Bin'
 Build target 'DFH_main'
-compiling modeSwitch_task.c...
-compiling main.c...
-compiling freertos.c...
 compiling chassis_task.c...
 ..\UserApp\chassis_task.c(103): warning:  #111-D: statement is unreachable
   			break;
@@ -72,10 +69,15 @@ compiling chassis_task.c...
 ..\UserApp\chassis_task.c(208): warning:  #940-D: missing return statement at end of non-void function "event_rotate"
   }
 ..\UserApp\chassis_task.c: 20 warnings, 0 errors
+compiling modeSwitch_task.c...
+..\UserApp\modeSwitch_task.c(113): warning:  #1-D: last line of file ends without a newline
+  }	
+..\UserApp\modeSwitch_task.c: 1 warning, 0 errors
+compiling freertos.c...
 linking...
-Program Size: Code=26356 RO-data=768 RW-data=260 ZI-data=25652  
+Program Size: Code=26632 RO-data=772 RW-data=264 ZI-data=26152  
 FromELF: creating hex file...
-"DFH_main\DFH_main.axf" - 0 Error(s), 20 Warning(s).
+"DFH_main\DFH_main.axf" - 0 Error(s), 21 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -86,14 +88,14 @@ Package Vendor: ARM
    * Component: CORE Version: 4.3.0
 
 <h2>Collection of Component include folders:</h2>
-  D:\Desktop\DFH\DFH2\DFH\DfhJFG\MDK-ARM\RTE
-  D:\RootSoftWare\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include
-  D:\RootSoftWare\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+  C:\Users\bai\Desktop\git\DFH\DfhJFG\MDK-ARM\RTE
+  D:\software_root\Keil5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include
+  D:\software_root\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:4.3.0
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:05
 </pre>
 </body>
 </html>

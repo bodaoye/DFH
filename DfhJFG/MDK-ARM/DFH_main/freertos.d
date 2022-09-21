@@ -1,7 +1,7 @@
 dfh_main\freertos.o: ../Src/freertos.c
 dfh_main\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-dfh_main\freertos.o: D:\RootSoftWare\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-dfh_main\freertos.o: D:\RootSoftWare\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+dfh_main\freertos.o: D:\software_root\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+dfh_main\freertos.o: D:\software_root\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
 dfh_main\freertos.o: ../Inc/FreeRTOSConfig.h
 dfh_main\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 dfh_main\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
@@ -50,4 +50,5 @@ dfh_main\freertos.o: ../UserBsp/bsp_limit.h
 dfh_main\freertos.o: ../Inc/gpio.h
 dfh_main\freertos.o: ..\UserApp\debug_task.h
 dfh_main\freertos.o: ..\UserApp\chassis_task.h
+dfh_main\freertos.o: D:\software_root\Keil5\ARM\ARMCC\Bin\..\include\string.h
 dfh_main\freertos.o: ..\UserApp\modeSwitch_task.h

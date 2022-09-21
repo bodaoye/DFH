@@ -23,6 +23,9 @@ typedef enum
 extern ctrl_mode_e 	ctrl_mode;
 
 void modeSwitch_task(void const *argu);
-
+void remote_unlock(void);
+static void sw1_mode_handler(void);
+static void sw2_mode_handler(void);
+void get_sw_mode(void);
 #endif
 

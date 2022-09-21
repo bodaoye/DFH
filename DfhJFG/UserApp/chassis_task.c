@@ -10,7 +10,7 @@
 
 
 /*----------------------------------------------------------------------------------------------------------------------*/
-
+chassis_t       chassis;
 /* 保存传感器底层传来的数据 */
 chassisSenor_t chassisSenorData;
 /* 大激光的最短距离  ！调 */
@@ -216,10 +216,9 @@ chassisAction_e (* afEventHandler[])(int *currentAngle, int *targetAngle) = { ev
 
 void chassis_task(void const *argu) {
     uint32_t thread_wake_time = osKernelSysTick();
-	
-		chassisStateInit();//底盘状态机初始化
 
 		chassisAction_e (* eventFunction)(int *currentAngle, int *targetAngle);
+    
     for (;;) {
 			/*
 				FSM流程：0. 当前状态初始化
@@ -228,11 +227,55 @@ void chassis_task(void const *argu) {
 								 事件函数内部   通过条件判断    返回当前事件    或执行当前状态
 								 事件    和     当前状态     合成的二维数组   确定了    唯一的下一个状态或维持当前状态 
 			*/
-			
-			eventFunction		 		=  	afEventHandler[chassisCurrentState];				//将状态函数指针交给定义的临时指针
-			chassisNextAction 	=  	eventFunction(&currentAngle, &targetAngle);	//执行当前状态并获取下一状态的角标
-			chassisCurrentState = 	lookUpTable[chassisCurrentState][chassisNextAction];//更新当前状态角标
-			
+			switch(ctrl_mode) {
+        case PROTECT_MODE: {
+          memset(chassis.current_2006, 0, sizeof(chassis.current_2006));
+          break;
+        }
+        case STANDARD_MODE: {
+          eventFunction		 		=  	afEventHandler[chassisCurrentState];				//将状态函数指针交给定义的临时指针
+          chassisNextAction 	=  	eventFunction(&currentAngle, &targetAngle);	//执行当前状态并获取下一状态的角标
+          chassisCurrentState = 	lookUpTable[chassisCurrentState][chassisNextAction];//更新当前状态角标
+           /* 麦轮解算 */
+          mecanum_calc(chassis.spd_input.vx, chassis.spd_input.vy, chassis.spd_input.vw, chassis.wheel_spd_input);
+          /* PID计算电机控制电流 */
+          chassis_pid_calcu();
+          break;
+        }
+      }
+      memcpy(motor_cur.chassis_2006_cur, chassis.current_2006, sizeof(chassis.current_2006));
 			osDelayUntil(&thread_wake_time, 1);
     }
+}
+
+/**
+  * @brief 麦轮解算函数
+  * @param input : ?=+vx(mm/s)  ?=+vy(mm/s)  ccw=+vw(deg/s)
+  *        output: every wheel speed(rpm)
+  * @note  1=FL 2=FR 3=BL 4=BR
+  */
+void mecanum_calc(float vx, float vy, float vw, float speed[])
+{
+	float wheel_rpm[4];
+	wheel_rpm[0] =    + vx  +vy + vw;	 	//+	
+	wheel_rpm[1] = 	 +vx - vy + vw; 	//-
+	wheel_rpm[2] =    -vx  - vy + vw;		//-
+	wheel_rpm[3] =  -vx + vy + vw;		//+
+	memcpy(speed, wheel_rpm, 4*sizeof(float));
+	
+}
+
+/**
+  * @brief      底盘PID
+  * @author         
+  * @param[in]  
+  * @retval     
+  */
+void chassis_pid_calcu(void) {
+	for(uint8_t i=0; i<4; i++) {
+		/* 底盘电机速度环 */
+		chassis.wheel_spd_fdb[i] = moto_msg.chassis_2006[i].speed_rpm;
+		chassis.current_2006[i]  = (int16_t)pid_calc(&pid_chassis_3508_spd[i], chassis.wheel_spd_fdb[i], chassis.wheel_spd_ref[i]);
+
+	}
 }

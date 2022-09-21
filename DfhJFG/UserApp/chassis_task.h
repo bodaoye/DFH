@@ -13,6 +13,7 @@
 
 #include "stm32f4xx_hal.h"
 #include <stdint.h>
+#include <string.h>
 
 typedef struct {
 		/* 小激光 */
@@ -71,7 +72,6 @@ typedef enum
 	rotateTurnToIdle
 }chassisIdleState_e;
 
-
 /*FSM EVENT*/
 typedef enum
 {
@@ -80,9 +80,32 @@ typedef enum
 	rotate = 2,
 	idle
 }chassisAction_e;
+
+typedef struct 
+{
+	float vx;
+	float vy;
+	float vw;
+}spd_t;
+
+/* chassis parameter structure */
+typedef struct
+{
+	spd_t     spd_input; //(键盘/遥控器)输入的三轴向速度
+
+  float   	wheel_spd_input[4]; //舵轮解算所得轮速输入
+	float   	wheel_spd_ref[4];		//速度重分配后所得轮速目标
+	float   	wheel_spd_fdb[4];		//电机轮速反馈
+  int16_t		current_2006[4];
+  
+	float     wheel_max;
+}chassis_t;
+void chassis_param_init(void);
 void chassisStateInit(void);
 void chassis_task(void const *argu);
 void getSenorData(void);
+void mecanum_calc(float vx, float vy, float vw, float speed[]);
+void chassis_pid_calcu(void);
 
 #endif
 
