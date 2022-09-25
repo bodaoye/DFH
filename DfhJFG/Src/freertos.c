@@ -163,7 +163,7 @@ void StartDefaultTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-    getLimitStatus(limitStatus);
+
     osDelay(10);
   }
   /* USER CODE END StartDefaultTask */

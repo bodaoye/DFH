@@ -14,6 +14,19 @@
 #include "stm32f4xx_hal.h"
 #include <stdint.h>
 #include <string.h>
+#include "bsp_limit.h"
+#define MAXSPEED 9200
+#define CURRENT_ANGLE_ABS_DATA 0.5
+
+#define TOWARD_ANGLE1  90
+#define TOWARD_ANGLE2  270
+#define TOWARD_ANGLE3  180//直行角度分为180  90 270
+
+#define FIND_ANGLE1    0
+#define FIND_ANGLE2    360  //找垄角度分为 0 360
+
+#define CANTSTOP 0
+#define CANSTOP  1
 
 typedef struct {
 		/* 小激光 */
@@ -25,10 +38,13 @@ typedef struct {
 	float imuYaw;
 	float imuWy;
 		/* 光电开关 */
-	uint8_t leftKey;
-	uint8_t rightKey;
-	uint8_t headKey;
-	uint8_t	tailKey;
+	uint8_t leftHeadKey;
+	uint8_t rightHeadKey;
+	uint8_t leftTailKey;
+	uint8_t	rightTailKey;
+	
+	int16_t  speed_rpm[4];
+  
 }chassisSenor_t;
 
 typedef struct {
@@ -40,6 +56,12 @@ typedef struct {
 	uint8_t chassisRotateState;
 	/* 空闲状态机 */
 	uint8_t chassisIdleState;
+  /* 当前角度 与 下一时刻角度 */
+  float currentAngle;
+  float targetAngle;
+  float angleError;
+  /* 目标贴墙距离 */
+  float targedis;
 }chassisState_t;
 
 /*FSM Data*/
@@ -55,10 +77,11 @@ typedef enum
 typedef enum
 {
 	idleTurnToStraight = 0,
-	idleTurnToStop,
-	idleTurnToRotate,
-	idleTurnToIdle,
-	goStraightTurnToStraight,
+	idleTurnToStop = 1,
+	idleTurnToRotate = 2,
+	idleTurnToIdle = 3,
+	goStraightTurnToStraightP = 4,
+  goStraightTurnToStraightN,
 	goStraightTurnToStop,
 	goStraightTurnToRotate,
 	goStraightTurnToIdle,
@@ -93,19 +116,50 @@ typedef struct
 {
 	spd_t     spd_input; //(键盘/遥控器)输入的三轴向速度
 
+  float     chassis_angle_fdb;
+  float     chassis_angle_ref;
+  float     chassis_angle_error;
+  
+  float     chassis_stop_dis_fdb;
+  float     chassis_stop_dis_ref;
+  float     chassis_stop_dis_error;
+  
+  float     chassis_stickdis_fdb;
+  float     chassis_stickdis_ref;
+  float     chassis_stickdis_error;
+  
   float   	wheel_spd_input[4]; //舵轮解算所得轮速输入
 	float   	wheel_spd_ref[4];		//速度重分配后所得轮速目标
 	float   	wheel_spd_fdb[4];		//电机轮速反馈
+  
   int16_t		current_2006[4];
   
 	float     wheel_max;
 }chassis_t;
+
+extern chassisState_e chassisCurrentState;
+extern chassisAction_e chassisNextAction;
+extern chassisSenor_t chassisSenorData;	
+extern chassis_t       chassis;
+extern chassisState_t chassisState;
+
+chassisAction_e event_idle(float *currentAngle, float *targetAngle);
+chassisAction_e event_stop(float *currentAngle, float *targetAngle);
+chassisAction_e event_goStraight(float *currentAngle, float *targetAngle);
+chassisAction_e event_rotate(float *currentAngle, float *targetAngle);
 void chassis_param_init(void);
 void chassisStateInit(void);
 void chassis_task(void const *argu);
 void getSenorData(void);
 void mecanum_calc(float vx, float vy, float vw, float speed[]);
 void chassis_pid_calcu(void);
+float chassTrunAnyAngle(float *targetAngle);
+float chassStickToAnyDistance(float *dis);
+int getFarmData(uint8_t *Head, uint8_t *Tail,limitKey_t *key1);
+void farmLimitUpdate(limitKey_t *key1);
+void stop(int step);
+void gogogo(int step);
+int ifStop(void);
 
 #endif
 

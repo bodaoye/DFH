@@ -687,6 +687,31 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>UserMathlib</GroupName>
+          <Files>
+            <File>
+              <FileName>pid.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UserMathlib\pid.c</FilePath>
+            </File>
+            <File>
+              <FileName>pid.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\UserMathlib\pid.h</FilePath>
+            </File>
+            <File>
+              <FileName>math_calcu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UserMathlib\math_calcu.c</FilePath>
+            </File>
+            <File>
+              <FileName>math_calcu.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\UserMathlib\math_calcu.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>UserBsp/</GroupName>
           <Files>
             <File>
@@ -814,30 +839,15 @@
               <FileType>5</FileType>
               <FilePath>..\UserApp\modeSwitch_task.h</FilePath>
             </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>UserMathlib</GroupName>
-          <Files>
             <File>
-              <FileName>pid.c</FileName>
+              <FileName>comm_task.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\UserMathlib\pid.c</FilePath>
+              <FilePath>..\UserApp\comm_task.c</FilePath>
             </File>
             <File>
-              <FileName>pid.h</FileName>
+              <FileName>comm_task.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\UserMathlib\pid.h</FilePath>
-            </File>
-            <File>
-              <FileName>math_calcu.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\UserMathlib\math_calcu.c</FilePath>
-            </File>
-            <File>
-              <FileName>math_calcu.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\UserMathlib\math_calcu.h</FilePath>
+              <FilePath>..\UserApp\comm_task.h</FilePath>
             </File>
           </Files>
         </Group>
