@@ -11,15 +11,15 @@
 #include <stdarg.h>
 #include <string.h>
 
-#define 	Servo_Control_Msg_Tx_Buf_Len 	9
+#define 	Servo_Control_Msg_Tx_Buf_Len 	10
 //宏函数 获得A的低八位
 #define GET_LOW_BYTE(A) ((uint8_t)(A))
 //宏函数 获得A的高八位
 #define GET_HIGH_BYTE(A) ((uint8_t)((A) >> 8))
 
 
-uint8_t LobotTxBuf[128];  //发送缓存
-uint8_t LobotRxBuf[16];
+uint8_t LobotTxBuf[Servo_Control_Msg_Tx_Buf_Len];  //发送缓存
+uint8_t LobotRxBuf[10];
 
 /* 单个舵机控制接口 */
 void singleServerControl( uint8_t servoID, uint16_t Position, uint16_t Time ) {
