@@ -7,7 +7,7 @@
 #include "remote_msg.h"
 #include "pid.h"
 #include "math_calcu.h"
-
+#include "KalmanFilter.h"
 #include "modeSwitch_task.h"
 #include "comm_task.h"
 /*
@@ -118,7 +118,8 @@ void getSenorData(void) {
 		/* 获取小激光数据 */
 	chassisSenorData.leftSmallLazer = wt53r_distance[0];
 		/* 获取大激光数据 */
-	chassisSenorData.headBigLazer = tfmin_distance[1];
+	chassisSenorData.headBigLazer_init = tfmin_distance[1];
+  chassisSenorData.headBigLazer_kal = Kalman1FilterCalc(&kalman_bigLazer,chassisSenorData.headBigLazer_init);
 		/* 获取陀螺仪数据 */
 	chassisSenorData.imuYaw = imu_data.yaw;
 	chassisSenorData.imuWy 	= imu_data.wy;
@@ -180,6 +181,7 @@ void chassis_task(void const *argu) {
           break;
         }
         case STANDARD_MODE: {
+        chassisSenorData.headBigLazer_kal = Kalman1FilterCalc(&kalman_bigLazer,chassisSenorData.headBigLazer_init);//大激光数据滤波
         #ifdef __Debug
           eventFunction		 		=  	afEventHandler[chassisCurrentState];				//将状态函数指针交给定义的临时指针
           chassisNextAction 	=  	eventFunction(&chassisState.currentAngle, &chassisState.targetAngle);	//执行当前状态并获取下一状态的
@@ -300,7 +302,7 @@ chassisAction_e event_goStraight(float *currentAngle, float *targetAngle) {
   1. 找垄道方向
  */
 	/* 根据传感器更新状态机 */
-	if(chassisSenorData.headBigLazer >=  miniBigLaserDis )  //大激光检测到前方还有很长一段距离
+	if(chassisSenorData.headBigLazer_kal >=  miniBigLaserDis )  //大激光检测到前方还有很长一段距离
          //而且是肆无忌惮加速
   {      //使用大激光反馈判断是否加速
     if(*currentAngle == TOWARD_ANGLE1 || *currentAngle == TOWARD_ANGLE2 || *currentAngle == TOWARD_ANGLE3){  //当前不需要找垄道，直行加速
@@ -456,7 +458,7 @@ float chassStopDistance(float *dis) {
   //更新目标值
   chassis.chassis_stop_dis_ref = *dis;
   //更新反馈值
-  chassis.chassis_stop_dis_fdb = chassisSenorData.headBigLazer;
+  chassis.chassis_stop_dis_fdb = chassisSenorData.headBigLazer_kal;
   
   middleOut = (int16_t)pid_calc(&pid_chassis_stop_pos, chassis.chassis_stop_dis_fdb, chassis.chassis_stop_dis_ref );
   return middleOut;

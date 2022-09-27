@@ -32,7 +32,8 @@ typedef struct {
 		/* 小激光 */
 	uint16_t leftSmallLazer;
 		/* 大激光 */
-	uint16_t headBigLazer;
+  float headBigLazer_init;
+	float headBigLazer_kal;
 	uint16_t tailBigLazer;
 		/* 陀螺仪 */
 	float imuYaw;

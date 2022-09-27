@@ -40,6 +40,7 @@
 "dfh_main\port.o"
 "dfh_main\pid.o"
 "dfh_main\math_calcu.o"
+"dfh_main\kalmanfilter.o"
 "dfh_main\remote_msg.o"
 "dfh_main\bsp_uart.o"
 "dfh_main\bsp_can.o"
@@ -53,7 +54,7 @@
 "dfh_main\chassis_task.o"
 "dfh_main\modeswitch_task.o"
 "dfh_main\comm_task.o"
---strict --scatter "DFH_main\DFH_main.sct"
+--library_type=microlib --strict --scatter "DFH_main\DFH_main.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "DFH_main.map" -o DFH_main\DFH_main.axf

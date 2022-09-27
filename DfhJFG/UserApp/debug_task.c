@@ -10,7 +10,7 @@ void DataWavePkg(void) {
       case 0:{
         DataScope_Get_Channel_Data(chassisCurrentState);//当前状态
          DataScope_Get_Channel_Data(chassisNextAction);//下一实可指向的状态
-        DataScope_Get_Channel_Data(chassisSenorData.headBigLazer);//大激光读数
+        DataScope_Get_Channel_Data(chassisSenorData.headBigLazer_kal);//大激光读数
         DataScope_Get_Channel_Data(chassisState.currentAngle);
        break;
       }
@@ -35,7 +35,7 @@ void DataWavePkg(void) {
       }
        case 4: {
         DataScope_Get_Channel_Data(chassisSenorData.leftSmallLazer);
-        DataScope_Get_Channel_Data(chassisSenorData.headBigLazer);
+        DataScope_Get_Channel_Data(chassisSenorData.headBigLazer_kal);
         DataScope_Get_Channel_Data(chassisSenorData.imuYaw);
        }
       

@@ -62,5 +62,6 @@ dfh_main\chassis_task.o: ..\UserMathlib\pid.h
 dfh_main\chassis_task.o: ..\UserMathlib\math_calcu.h
 dfh_main\chassis_task.o: D:\software_root\Keil5\ARM\ARMCC\Bin\..\include\math.h
 dfh_main\chassis_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+dfh_main\chassis_task.o: ..\UserMathlib\KalmanFilter.h
 dfh_main\chassis_task.o: ..\UserApp\modeSwitch_task.h
 dfh_main\chassis_task.o: ..\UserApp\comm_task.h
