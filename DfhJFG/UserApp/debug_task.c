@@ -38,6 +38,10 @@ void DataWavePkg(void) {
         DataScope_Get_Channel_Data(chassisSenorData.headBigLazer_kal);
         DataScope_Get_Channel_Data(chassisSenorData.imuYaw);
        }
+        case 5: {
+            DataScope_Get_Channel_Data(chassis.wheel_spd_fdb[0]);
+            DataScope_Get_Channel_Data(chassisSenorData.headBigLazer_kal);
+        }
       
   }
 }

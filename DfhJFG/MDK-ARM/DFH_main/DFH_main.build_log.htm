@@ -22,12 +22,65 @@ Dialog DLL:      TCM.DLL V1.14.8.0
  
 <h2>Project:</h2>
 C:\Users\bai\Desktop\git\DFH\DfhJFG\MDK-ARM\DFH_main.uvprojx
-Project File Date:  09/21/2022
+Project File Date:  09/27/2022
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 1 (build 61)', folder: 'D:\software_root\Keil5\ARM\ARMCC\Bin'
 Build target 'DFH_main'
-"DFH_main\DFH_main.axf" - 0 Error(s), 0 Warning(s).
+compiling chassis_task.c...
+..\UserApp\chassis_task.c(110): warning:  #940-D: missing return statement at end of non-void function "getFarmData"
+  }
+..\UserApp\chassis_task.c(243): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(247): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(251): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(255): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(258): warning:  #940-D: missing return statement at end of non-void function "event_idle"
+  }
+..\UserApp\chassis_task.c(272): warning:  #111-D: statement is unreachable
+  		  break;
+..\UserApp\chassis_task.c(301): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(305): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(308): warning:  #940-D: missing return statement at end of non-void function "event_stop"
+  }
+..\UserApp\chassis_task.c(358): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(366): warning:  #111-D: statement is unreachable
+  			break;   
+..\UserApp\chassis_task.c(371): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(376): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(380): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(384): warning:  #940-D: missing return statement at end of non-void function "event_goStraight"
+  }
+..\UserApp\chassis_task.c(396): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(400): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(407): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(411): warning:  #111-D: statement is unreachable
+  			break;
+..\UserApp\chassis_task.c(414): warning:  #940-D: missing return statement at end of non-void function "event_rotate"
+  }
+..\UserApp\chassis_task.c(498): warning:  #223-D: function "abs" declared implicitly
+        num = abs(chassisSenorData.speed_rpm[0])+ 
+..\UserApp\chassis_task.c(504): warning:  #1-D: last line of file ends without a newline
+  }
+..\UserApp\chassis_task.c(496): warning:  #177-D: variable "stop_flag" was declared but never referenced
+    static int stop_flag = 0;
+..\UserApp\chassis_task.c: 24 warnings, 0 errors
+linking...
+Program Size: Code=30672 RO-data=804 RW-data=304 ZI-data=26648  
+FromELF: creating hex file...
+"DFH_main\DFH_main.axf" - 0 Error(s), 24 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -45,7 +98,7 @@ Package Vendor: ARM
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:4.3.0
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:09
 </pre>
 </body>
 </html>

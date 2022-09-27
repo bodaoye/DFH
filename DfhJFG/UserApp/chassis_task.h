@@ -15,7 +15,7 @@
 #include <stdint.h>
 #include <string.h>
 #include "bsp_limit.h"
-#define MAXSPEED 9200
+#define MAXSPEED 9300
 #define CURRENT_ANGLE_ABS_DATA 0.5
 
 #define TOWARD_ANGLE1  90

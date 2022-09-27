@@ -330,7 +330,7 @@
             <vShortWch>1</vShortWch>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>USE_HAL_DRIVER,STM32F407xx</Define>
+              <Define>USE_HAL_DRIVER,STM32F407xx,__FPU_PRESENT</Define>
               <Undefine></Undefine>
               <IncludePath>../Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../UserBsp;..\UserApp;..\UserMathlib</IncludePath>
             </VariousControls>
@@ -708,6 +708,16 @@
               <FileName>math_calcu.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\UserMathlib\math_calcu.h</FilePath>
+            </File>
+            <File>
+              <FileName>KalmanFilter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UserMathlib\KalmanFilter.c</FilePath>
+            </File>
+            <File>
+              <FileName>KalmanFilter.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\UserMathlib\KalmanFilter.h</FilePath>
             </File>
           </Files>
         </Group>

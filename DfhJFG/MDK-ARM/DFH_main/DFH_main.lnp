@@ -54,7 +54,7 @@
 "dfh_main\chassis_task.o"
 "dfh_main\modeswitch_task.o"
 "dfh_main\comm_task.o"
---library_type=microlib --strict --scatter "DFH_main\DFH_main.sct"
+--strict --scatter "DFH_main\DFH_main.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "DFH_main.map" -o DFH_main\DFH_main.axf
