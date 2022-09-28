@@ -267,8 +267,7 @@ chassisAction_e event_stop(float *currentAngle, float *targetAngle) {
        chassis.spd_input.vw = chassTrunAnyAngle(&chassisState.currentAngle);
 			return speedDown;
 		}
-		case stopTurnToRotate:{
-
+		case stopTurnToRotate:{ 
       if(chassisState.currentAngle == 180)
           chassisState.targetAngle = 90;//Í£Ö¹ºóÐý×ª
       if(chassisState.currentAngle == 90)

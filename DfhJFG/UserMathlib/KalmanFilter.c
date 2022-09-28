@@ -266,7 +266,7 @@ void Kalman1FilterDeinit(Kalman1_param_t *p)
 	* @note  
   */
 void KalmanInitOldVersion(void) {
-	Kalman1FilterCreate(&kalman_bigLazer, 1, 5);
+	Kalman1FilterCreate(&kalman_bigLazer, 1, 2);
 }
 
 

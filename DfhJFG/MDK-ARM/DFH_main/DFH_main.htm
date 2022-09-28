@@ -3,7 +3,7 @@
 <title>Static Call Graph - [DFH_main\DFH_main.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image DFH_main\DFH_main.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Tue Sep 27 13:30:34 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Wed Sep 28 09:29:39 2022
 <BR><P>
 <H3>Maximum Stack Usage =        336 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -743,7 +743,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;debug_task
 </UL>
 
-<P><STRONG><a name="[92]"></a>DataWavePkg</STRONG> (Thumb, 218 bytes, Stack size 16 bytes, debug_task.o(i.DataWavePkg))
+<P><STRONG><a name="[92]"></a>DataWavePkg</STRONG> (Thumb, 262 bytes, Stack size 16 bytes, debug_task.o(i.DataWavePkg))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = DataWavePkg
 </UL>
 <BR>[Calls]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataScope_Get_Channel_Data
@@ -1654,7 +1654,7 @@ Global Symbols
 <LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;event_goStraight
 </UL>
 
-<P><STRONG><a name="[128]"></a>chassisStateInit</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, chassis_task.o(i.chassisStateInit))
+<P><STRONG><a name="[128]"></a>chassisStateInit</STRONG> (Thumb, 52 bytes, Stack size 0 bytes, chassis_task.o(i.chassisStateInit))
 <BR><BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -1703,8 +1703,8 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_RxFifo0MsgPendingCallback
 </UL>
 
-<P><STRONG><a name="[5]"></a>event_goStraight</STRONG> (Thumb, 284 bytes, Stack size 32 bytes, chassis_task.o(i.event_goStraight))
-<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = event_goStraight &rArr; chassTrunAnyAngle &rArr; pid_calc
+<P><STRONG><a name="[5]"></a>event_goStraight</STRONG> (Thumb, 336 bytes, Stack size 40 bytes, chassis_task.o(i.event_goStraight))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = event_goStraight &rArr; chassTrunAnyAngle &rArr; pid_calc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gogogo
 <LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFarmData
@@ -1728,7 +1728,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> chassis_task.o(.data)
 </UL>
-<P><STRONG><a name="[4]"></a>event_stop</STRONG> (Thumb, 208 bytes, Stack size 16 bytes, chassis_task.o(i.event_stop))
+<P><STRONG><a name="[4]"></a>event_stop</STRONG> (Thumb, 210 bytes, Stack size 16 bytes, chassis_task.o(i.event_stop))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = event_stop &rArr; chassTrunAnyAngle &rArr; pid_calc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stop
@@ -1756,8 +1756,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSenorData
 </UL>
 
-<P><STRONG><a name="[11b]"></a>getSenorData</STRONG> (Thumb, 142 bytes, Stack size 8 bytes, chassis_task.o(i.getSenorData))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = getSenorData &rArr; getLimitStatus
+<P><STRONG><a name="[11b]"></a>getSenorData</STRONG> (Thumb, 160 bytes, Stack size 16 bytes, chassis_task.o(i.getSenorData))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = getSenorData &rArr; getLimitStatus
 </UL>
 <BR>[Calls]<UL><LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getLimitStatus
 <LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Kalman1FilterCalc

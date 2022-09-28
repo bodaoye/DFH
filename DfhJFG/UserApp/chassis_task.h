@@ -143,6 +143,7 @@ extern chassisAction_e chassisNextAction;
 extern chassisSenor_t chassisSenorData;	
 extern chassis_t       chassis;
 extern chassisState_t chassisState;
+extern int findFlagTest;
 
 chassisAction_e event_idle(float *currentAngle, float *targetAngle);
 chassisAction_e event_stop(float *currentAngle, float *targetAngle);

@@ -53,6 +53,7 @@ dfh_main\main.o: ../Inc/usart.h
 dfh_main\main.o: ../Inc/gpio.h
 dfh_main\main.o: ../UserBsp/bsp_uart.h
 dfh_main\main.o: ../UserBsp/bsp_can.h
+dfh_main\main.o: ..\UserMathlib\KalmanFilter.h
 dfh_main\main.o: ..\UserApp\chassis_task.h
 dfh_main\main.o: D:\software_root\Keil5\ARM\ARMCC\Bin\..\include\string.h
 dfh_main\main.o: ../UserBsp/bsp_limit.h

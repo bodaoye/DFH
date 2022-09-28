@@ -32,6 +32,8 @@
 /* USER CODE BEGIN Includes */
 #include "bsp_uart.h"
 #include "bsp_can.h"
+#include "KalmanFilter.h"
+
 #include "chassis_task.h"
 /* USER CODE END Includes */
 

@@ -21,16 +21,18 @@ chassis_t       chassis;
 /* 保存传感器底层传来的数据 */
 chassisSenor_t chassisSenorData;
 /* 大激光的最短距离  ！调 */
-uint16_t miniBigLaserDis     = 120;
+uint16_t miniBigLaserDis     = 113;
 /* 最后垄道距离 */
 uint16_t lastBigLaserDis = 20;
 /* 刹车，油门步长 */
-int stepUp = 6,stepDown = 6;
+int stepUp = 12,stepDown = 12;
 /* 寻垄速度 */
 int speedFindField = 3000;
+/* 寻垄光电测试标志位 */
+int findFlagTest =0;
 
 const uint16_t miniSpm		   = 100;
-const uint16_t mindis        =  105;
+uint16_t mindis        =  100;
 /* 当前状态角标 */
 chassisState_e chassisCurrentState;
 /* 事件角标 */
@@ -140,6 +142,12 @@ void getSenorData(void) {
 		/* 底盘电机速度环 */                                                                 
 	chassisSenorData.speed_rpm[i] = moto_msg.chassis_2006[i].speed_rpm;                                                           
 	}
+  //270会导致后面的光电开关误触，更新小激光贴墙数据
+  if(chassisState.currentAngle == TOWARD_ANGLE2) {
+    mindis = 70;
+  } else {
+    mindis = 100;
+  }
 }
 /**
   初始化底盘FSM的状态变量
@@ -312,36 +320,34 @@ chassisAction_e event_goStraight(float *currentAngle, float *targetAngle) {
   1. 找垄道方向
  */
 	/* 根据传感器更新状态机 */
-	if(chassisSenorData.headBigLazer_kal >=  miniBigLaserDis ) { //大激光检测到前方还有很长一段距离
-         //而且是肆无忌惮加速
-        //使用大激光反馈判断是否加速
-//    stepUp = 30;
+	if(chassisSenorData.headBigLazer_kal >=  miniBigLaserDis && *currentAngle != FIND_ANGLE1) { //大激光检测到前方还有很长一段距离
     if(*currentAngle == TOWARD_ANGLE1 || *currentAngle == TOWARD_ANGLE2 || *currentAngle == TOWARD_ANGLE3){  //当前不需要找垄道，直行加速
         farmLimitUpdate(&limitFindKey);//接下来要找垄道了
         chassisState.chassisGostraightState = goStraightTurnToStraightP;//正向直行
     }
-    if(*currentAngle == FIND_ANGLE1) {    //当前角度需要找垄道，开启标志查找
-//      stepUp = 6;
-      if(getFarmData(&chassisSenorData.rightHeadKey,&chassisSenorData.rightTailKey,&limitFindKey) == 0) {
-          chassisState.chassisGostraightState = goStraightTurnToStraightN;//正向直行
-      }  else {                            //找到垄道刹车
-        if(*currentAngle == *targetAngle)
-          chassisState.chassisGostraightState = goStraightTurnToStop;
-      }  
-    }
    if(*currentAngle == FIND_ANGLE2) {    //当前角度需要找垄道，开启标志查找
-        //      stepUp = 6;
+        findFlagTest = getFarmData(&chassisSenorData.leftHeadKey,&chassisSenorData.leftTailKey,&limitFindKey);
       if(getFarmData(&chassisSenorData.leftHeadKey,&chassisSenorData.leftTailKey,&limitFindKey) == 0) {
         chassisState.chassisGostraightState = goStraightTurnToStraightN;//反向直行
       } else {                            //找到垄道刹车
         if(*currentAngle == *targetAngle)
           chassisState.chassisGostraightState = goStraightTurnToStop;
         }
-      } 
-  } else {				                                                      //使用大激光反馈判断是否刹车
-//		if(*currentAngle == *targetAngle) //应该不需要，不需要就删掉
+   } 
+  } else if(*currentAngle == FIND_ANGLE1) {//使用大激光反馈判断是否刹车
+    if(chassisSenorData.headBigLazer_kal >= lastBigLaserDis && *currentAngle == FIND_ANGLE1) {   //设置最小距离限制，防止无法走出最后一条垄道
+      if(getFarmData(&chassisSenorData.rightHeadKey,&chassisSenorData.rightTailKey,&limitFindKey) == 0) { //当前角度需要找垄道，开启标志查找
+          chassisState.chassisGostraightState = goStraightTurnToStraightN;//正向直行
+      } else {       //找到垄道刹车
+          if(*currentAngle == *targetAngle)
+            chassisState.chassisGostraightState = goStraightTurnToStop;
+      }  
+    } else {
       chassisState.chassisGostraightState = goStraightTurnToStop;
     }
+  } else {
+      chassisState.chassisGostraightState = goStraightTurnToStop;    
+  }
    
 	/* 根据状态机更新服务函数 并且返回 执行角标 */
 	switch(chassisState.chassisGostraightState) {
@@ -358,8 +364,11 @@ chassisAction_e event_goStraight(float *currentAngle, float *targetAngle) {
 			break;
 		}
     case goStraightTurnToStraightN: {//垄道反向直行					
-    chassis.spd_input.vx = 0;  
-      //			chassis.spd_input.vx = chassStickToAnyDistance(&chassisState.targedis);// 反向直行必须贴墙、、
+			if(chassisSenorData.leftHeadKey == 0 || chassisSenorData.leftTailKey == 0) { 				//使用光电反馈判断开机
+				chassis.spd_input.vx = 0;// 由于光电开关没有检测到障碍物，故没有进入垄道，不会贴墙
+			} else  {																																	//使用光电反馈判断是否处于不准开机的空闲模式
+				chassis.spd_input.vx = chassStickToAnyDistance(&chassisState.targedis);// 由于光电开关没有检测到障碍物，故没有进入垄道，不会贴墙
+			}
 			chassis.spd_input.vy = speedFindField;
 			chassis.spd_input.vw = chassTrunAnyAngle(&chassisState.currentAngle);
 			return speedUp;

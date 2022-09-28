@@ -13,7 +13,20 @@
 
 #include "stm32f4xx_hal.h"
 #include "stdint.h"
+typedef enum{
+  INITMODE,
+  
+}patStatus_e;
+
+typedef struct patBoard{
+  uint8_t status;
+} patBoard_t;
 void patSort_task(void const *argu);
+void InitMode(void);
+void __2PatPreMode(void);
+void __1PatPreMode(void);
+void __1PAT(void);
+void __2PAT(void);
 
 #endif
 

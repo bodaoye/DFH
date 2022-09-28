@@ -2,7 +2,7 @@
 #include "bsp_debug.h"
 #include "cmsis_os.h"
 #include "chassis_task.h"
-uint8_t debug_wave = 0; /* 用以选择打印的数据类型 */
+uint8_t debug_wave = 6; /* 用以选择打印的数据类型 */
 //弱函数的强定义
 void DataWavePkg(void) {
     /* 视觉调试专用部分  */
@@ -33,15 +33,20 @@ void DataWavePkg(void) {
         DataScope_Get_Channel_Data(chassis.chassis_stickdis_ref);
         DataScope_Get_Channel_Data(chassis.chassis_stickdis_fdb);
       }
-       case 4: {
+      case 4: {
         DataScope_Get_Channel_Data(chassisSenorData.leftSmallLazer);
         DataScope_Get_Channel_Data(chassisSenorData.headBigLazer_kal);
         DataScope_Get_Channel_Data(chassisSenorData.imuYaw);
        }
-        case 5: {
-            DataScope_Get_Channel_Data(chassis.wheel_spd_fdb[0]);
-            DataScope_Get_Channel_Data(chassisSenorData.headBigLazer_kal);
-        }
+      case 5: {
+         DataScope_Get_Channel_Data(chassis.wheel_spd_fdb[0]);
+         DataScope_Get_Channel_Data(chassisSenorData.headBigLazer_kal);
+       }
+      case 6: {
+        DataScope_Get_Channel_Data(chassisSenorData.leftHeadKey);
+        DataScope_Get_Channel_Data(chassisSenorData.leftTailKey );
+        DataScope_Get_Channel_Data(findFlagTest);
+       }
       
   }
 }
