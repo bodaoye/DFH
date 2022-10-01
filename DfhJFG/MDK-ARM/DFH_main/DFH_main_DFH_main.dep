@@ -1,9 +1,17 @@
 Dependencies for Project 'DFH_main', Target 'DFH_main': (DO NOT MODIFY !)
+<<<<<<< Updated upstream
 F (startup_stm32f407xx.s)(0x63326532)(--cpu Cortex-M4.fp -g --apcs=interwork -I ..\Inc-I C:\Users\bai\Desktop\git\DFH\DfhJFG\MDK-ARM\RTE-I D:\software_root\Keil5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\software_root\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include--pd "__UVISION_VERSION SETA 518" --pd "_RTE_ SETA 1" --pd "STM32F407xx SETA 1"--list startup_stm32f407xx.lst --xref -o dfh_main\startup_stm32f407xx.o --depend dfh_main\startup_stm32f407xx.d)
 F (../Src/main.c)(0x63339E10)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../UserBsp -I ..\UserApp -I ..\UserMathlib-I C:\Users\bai\Desktop\git\DFH\DfhJFG\MDK-ARM\RTE-I D:\software_root\Keil5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\software_root\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx -D__FPU_PRESENT-o dfh_main\main.o --omf_browse dfh_main\main.crf --depend dfh_main\main.d)
 I (../Inc/main.h)(0x633242C5)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x63323BFA)
 I (../Inc/stm32f4xx_hal_conf.h)(0x63324301)
+=======
+F (startup_stm32f407xx.s)(0x632161C6)(--cpu Cortex-M4.fp -g --apcs=interwork -I ..\Inc-I C:\Users\bai\Desktop\git\DFH\DfhJFG\MDK-ARM\RTE-I D:\software_root\Keil5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\software_root\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include--pd "__UVISION_VERSION SETA 518" --pd "_RTE_ SETA 1" --pd "STM32F407xx SETA 1"--list startup_stm32f407xx.lst --xref -o dfh_main\startup_stm32f407xx.o --depend dfh_main\startup_stm32f407xx.d)
+F (../Src/main.c)(0x63226F32)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../UserBsp -I ..\UserApp-I C:\Users\bai\Desktop\git\DFH\DfhJFG\MDK-ARM\RTE-I D:\software_root\Keil5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\software_root\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o dfh_main\main.o --omf_browse dfh_main\main.crf --depend dfh_main\main.d)
+I (../Inc/main.h)(0x632161C3)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x626FD40F)
+I (../Inc/stm32f4xx_hal_conf.h)(0x632161C3)
+>>>>>>> Stashed changes
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x626FD40F)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x626FD40F)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x626FD327)
@@ -92,7 +100,11 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x626FD40F)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x626FD40F)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x626FD40F)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x626FD40F)
+<<<<<<< Updated upstream
 F (../Src/freertos.c)(0x632B4049)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../UserBsp -I ..\UserApp -I ..\UserMathlib-I C:\Users\bai\Desktop\git\DFH\DfhJFG\MDK-ARM\RTE-I D:\software_root\Keil5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\software_root\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx -D__FPU_PRESENT-o dfh_main\freertos.o --omf_browse dfh_main\freertos.crf --depend dfh_main\freertos.d)
+=======
+F (../Src/freertos.c)(0x632264DF)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../UserBsp -I ..\UserApp-I C:\Users\bai\Desktop\git\DFH\DfhJFG\MDK-ARM\RTE-I D:\software_root\Keil5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\software_root\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o dfh_main\freertos.o --omf_browse dfh_main\freertos.crf --depend dfh_main\freertos.d)
+>>>>>>> Stashed changes
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x626FD348)
 I (D:\software_root\Keil5\ARM\ARMCC\include\stddef.h)(0x569DEA3A)
 I (D:\software_root\Keil5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
@@ -248,7 +260,11 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x626FD40F)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x626FD40F)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x626FD40F)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x626FD40F)
+<<<<<<< Updated upstream
 F (../Src/usart.c)(0x632A4DA7)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../UserBsp -I ..\UserApp -I ..\UserMathlib-I C:\Users\bai\Desktop\git\DFH\DfhJFG\MDK-ARM\RTE-I D:\software_root\Keil5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\software_root\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx -D__FPU_PRESENT-o dfh_main\usart.o --omf_browse dfh_main\usart.crf --depend dfh_main\usart.d)
+=======
+F (../Src/usart.c)(0x6322708A)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../UserBsp -I ..\UserApp-I C:\Users\bai\Desktop\git\DFH\DfhJFG\MDK-ARM\RTE-I D:\software_root\Keil5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\software_root\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o dfh_main\usart.o --omf_browse dfh_main\usart.crf --depend dfh_main\usart.d)
+>>>>>>> Stashed changes
 I (../Inc/usart.h)(0x632161C2)
 I (../Inc/main.h)(0x633242C5)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x63323BFA)
@@ -1554,10 +1570,17 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x626FD40F)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x626FD40F)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x626FD40F)
 I (../Inc/gpio.h)(0x632161BA)
+<<<<<<< Updated upstream
 I (../Inc/main.h)(0x633242C5)
 F (..\UserBsp\bsp_limit.h)(0x632D583F)()
 F (..\UserBsp\bsp_ServerDriver.c)(0x632A4DA7)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../UserBsp -I ..\UserApp -I ..\UserMathlib-I C:\Users\bai\Desktop\git\DFH\DfhJFG\MDK-ARM\RTE-I D:\software_root\Keil5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\software_root\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx -D__FPU_PRESENT-o dfh_main\bsp_serverdriver.o --omf_browse dfh_main\bsp_serverdriver.crf --depend dfh_main\bsp_serverdriver.d)
 I (..\UserBsp\bsp_ServerDriver.h)(0x632A4DA7)
+=======
+I (../Inc/main.h)(0x632161C3)
+F (..\UserBsp\bsp_limit.h)(0x63216419)()
+F (..\UserBsp\bsp_ServerDriver.c)(0x63226D91)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../UserBsp -I ..\UserApp-I C:\Users\bai\Desktop\git\DFH\DfhJFG\MDK-ARM\RTE-I D:\software_root\Keil5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\software_root\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o dfh_main\bsp_serverdriver.o --omf_browse dfh_main\bsp_serverdriver.crf --depend dfh_main\bsp_serverdriver.d)
+I (..\UserBsp\bsp_ServerDriver.h)(0x63226BF7)
+>>>>>>> Stashed changes
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x626FD327)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x63324469)
 I (../Drivers/CMSIS/Include/core_cm4.h)(0x633248D8)
@@ -1593,8 +1616,13 @@ I (../Inc/usart.h)(0x632161C2)
 I (../Inc/main.h)(0x633242C5)
 I (D:\software_root\Keil5\ARM\ARMCC\include\stdarg.h)(0x569DEA3A)
 I (D:\software_root\Keil5\ARM\ARMCC\include\string.h)(0x569DEA3A)
+<<<<<<< Updated upstream
 F (..\UserBsp\bsp_ServerDriver.h)(0x632A4DA7)()
 F (..\UserBsp\bsp_debug.c)(0x632CBD41)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../UserBsp -I ..\UserApp -I ..\UserMathlib-I C:\Users\bai\Desktop\git\DFH\DfhJFG\MDK-ARM\RTE-I D:\software_root\Keil5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\software_root\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx -D__FPU_PRESENT-o dfh_main\bsp_debug.o --omf_browse dfh_main\bsp_debug.crf --depend dfh_main\bsp_debug.d)
+=======
+F (..\UserBsp\bsp_ServerDriver.h)(0x63226BF7)()
+F (..\UserBsp\bsp_debug.c)(0x63226106)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../UserBsp -I ..\UserApp-I C:\Users\bai\Desktop\git\DFH\DfhJFG\MDK-ARM\RTE-I D:\software_root\Keil5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\software_root\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o dfh_main\bsp_debug.o --omf_browse dfh_main\bsp_debug.crf --depend dfh_main\bsp_debug.d)
+>>>>>>> Stashed changes
 I (..\UserBsp\bsp_debug.h)(0x63225FCF)
 I (../Inc/usart.h)(0x632161C2)
 I (../Inc/main.h)(0x633242C5)
@@ -1630,10 +1658,17 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x626FD40F)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x626FD40F)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x626FD40F)
 F (..\UserBsp\bsp_debug.h)(0x63225FCF)()
+<<<<<<< Updated upstream
 F (..\UserApp\debug_task.c)(0x63339A85)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../UserBsp -I ..\UserApp -I ..\UserMathlib-I C:\Users\bai\Desktop\git\DFH\DfhJFG\MDK-ARM\RTE-I D:\software_root\Keil5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\software_root\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx -D__FPU_PRESENT-o dfh_main\debug_task.o --omf_browse dfh_main\debug_task.crf --depend dfh_main\debug_task.d)
 I (..\UserApp\debug_task.h)(0x632A4DB7)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x63323BFA)
 I (../Inc/stm32f4xx_hal_conf.h)(0x63324301)
+=======
+F (..\UserApp\debug_task.c)(0x63227149)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../UserBsp -I ..\UserApp-I C:\Users\bai\Desktop\git\DFH\DfhJFG\MDK-ARM\RTE-I D:\software_root\Keil5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\software_root\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o dfh_main\debug_task.o --omf_browse dfh_main\debug_task.crf --depend dfh_main\debug_task.d)
+I (..\UserApp\debug_task.h)(0x632263EF)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x626FD40F)
+I (../Inc/stm32f4xx_hal_conf.h)(0x632161C3)
+>>>>>>> Stashed changes
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x626FD40F)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x626FD40F)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x626FD327)
@@ -1798,6 +1833,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x626FD348)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x626FD348)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x626FD348)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x626FD348)
+<<<<<<< Updated upstream
 F (..\UserApp\modeSwitch_task.h)(0x632DAD4A)()
 F (..\UserApp\comm_task.c)(0x632DAD45)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../UserBsp -I ..\UserApp -I ..\UserMathlib-I C:\Users\bai\Desktop\git\DFH\DfhJFG\MDK-ARM\RTE-I D:\software_root\Keil5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\software_root\Keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx -D__FPU_PRESENT-o dfh_main\comm_task.o --omf_browse dfh_main\comm_task.crf --depend dfh_main\comm_task.d)
 I (..\UserApp\comm_task.h)(0x632A5D3C)
@@ -1854,3 +1890,7 @@ I (D:\software_root\Keil5\ARM\ARMCC\include\string.h)(0x569DEA3A)
 I (../UserBsp/remote_msg.h)(0x631FBBFA)
 I (../Inc/usart.h)(0x632161C2)
 F (..\UserApp\comm_task.h)(0x632A5D3C)()
+=======
+I (../UserBsp/bsp_ServerDriver.h)(0x63226BF7)
+F (..\UserApp\debug_task.h)(0x632263EF)()
+>>>>>>> Stashed changes

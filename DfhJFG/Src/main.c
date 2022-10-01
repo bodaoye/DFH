@@ -112,9 +112,13 @@ int main(void)
   /* ------------------------------------所有的参数初始化均置于main函数---------------------------------------------------- */
   USER_UART_Init();
   can_device_init();
+<<<<<<< Updated upstream
   chassis_param_init();     // 底盘速度环PID初始化
 	chassisStateInit();	      // 底盘状态机初始化
   KalmanInitOldVersion();
+=======
+  
+>>>>>>> Stashed changes
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */

@@ -39,7 +39,7 @@ void singleServerControl( uint8_t servoID, uint16_t Position, uint16_t Time ) {
 	LobotTxBuf[9] = GET_HIGH_BYTE(Position);  //取得目标位置的高八位
 	
 	/* 调用相应串口发送 */
-	HAL_UART_Transmit_DMA(&huart6, LobotTxBuf, Servo_Control_Msg_Tx_Buf_Len);
+	HAL_UART_Transmit_DMA(&huart6, LobotTxBuf, 10);
 }
 
 /* 多个舵机控制接口 */
