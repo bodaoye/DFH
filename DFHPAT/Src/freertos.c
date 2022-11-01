@@ -51,13 +51,9 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
-/* USER CODE BEGIN Variables */
-osThreadId debug_task_t;
-osThreadId chassis_task_t;
-osThreadId modeSwitch_task_t;
-osThreadId can_msg_send_task_t;
-osThreadId patSort_task_t;
-
+/* USER CODE BEGIN Variables */ 
+osThreadId color1_patSort_task_t;
+osThreadId color2_patSort_task_t;
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
 
@@ -136,22 +132,13 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   
-	osThreadDef(canTask, can_msg_send_task, osPriorityHigh, 0, 512);
-  can_msg_send_task_t = osThreadCreate(osThread(canTask), NULL);
+  osThreadDef(color1patSortTask, color1_patSort_task, osPriorityNormal, 0, 256);
+	color1_patSort_task_t = osThreadCreate(osThread(color1patSortTask), NULL);
   
-  osThreadDef(debugTask, debug_task, osPriorityNormal, 0, 256);
-	debug_task_t = osThreadCreate(osThread(debugTask), NULL);
+  osThreadDef(color2patSortTask, color2_patSort_task, osPriorityNormal, 0, 256);
+	color2_patSort_task_t = osThreadCreate(osThread(color2patSortTask), NULL);
   
-	osThreadDef(chassisTask, chassis_task, osPriorityNormal, 0, 512);
-	debug_task_t = osThreadCreate(osThread(chassisTask), NULL);
-  
-	osThreadDef(modeSwitchTask, modeSwitch_task, osPriorityNormal, 0, 256);
-	debug_task_t = osThreadCreate(osThread(modeSwitchTask), NULL);
-  
-  osThreadDef(patSortTask, patSort_task, osPriorityNormal, 0, 256);
-	patSort_task_t = osThreadCreate(osThread(patSortTask), NULL);
-  
-  	taskEXIT_CRITICAL();
+  taskEXIT_CRITICAL();
   /* USER CODE END RTOS_THREADS */
 
 }

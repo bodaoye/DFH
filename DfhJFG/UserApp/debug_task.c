@@ -1,7 +1,7 @@
 #include "debug_task.h"
 #include "bsp_debug.h"
 #include "cmsis_os.h"
-<<<<<<< Updated upstream
+#include "bsp_debug.h"
 #include "chassis_task.h"
 uint8_t debug_wave = 6; /* 用以选择打印的数据类型 */
 //弱函数的强定义
@@ -50,30 +50,17 @@ void DataWavePkg(void) {
        }
       
   }
-=======
-#include "bsp_ServerDriver.h"
-uint8_t debug_wave = 0; /* 用以选择打印的数据类型 */
-
-void DataWavePkg(void) {
-    /* 视觉调试专用部分  */
-    switch (debug_wave) {
-    
-    }
->>>>>>> Stashed changes
+  
 }
 
 void debug_task(void const *argu) {
     uint32_t thread_wake_time = osKernelSysTick();
-     singleServerControl(0x03, 1000, 300);
     for (;;) {
-<<<<<<< Updated upstream
         DataWave(&huart2);	
         osDelayUntil(&thread_wake_time, 1);
-=======
 //   singleServerControl(0x03, 180, 3000);
 //    DataWave(&huart4);
      osDelayUntil(&thread_wake_time, 1);
->>>>>>> Stashed changes
     }
 }
 

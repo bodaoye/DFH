@@ -17,7 +17,7 @@
 #include "usart.h"
 
 
-
+chassis_rec_msg_t chassis_rec_msg;
 motor_current_t   motor_cur;
 
 //  uint8_t supercap_control_msg[7] = {0};
@@ -43,5 +43,11 @@ can_msg_send_task(void const *argu) {
 	}
 }
 
-
+void getChassisData(uint8_t *Data) {
+  if(Data[0] == 0x11 && Data[3] == 0x2b) {
+    chassis_rec_msg.openCollectFlag = Data[1];
+    chassis_rec_msg.enableOpenFlag = Data[2];
+    
+  }
+}
 

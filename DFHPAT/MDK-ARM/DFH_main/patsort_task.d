@@ -51,3 +51,5 @@ dfh_main\patsort_task.o: ../UserBsp/remote_msg.h
 dfh_main\patsort_task.o: ../Inc/usart.h
 dfh_main\patsort_task.o: ../Inc/main.h
 dfh_main\patsort_task.o: ../UserBsp/bsp_ServerDriver.h
+dfh_main\patsort_task.o: ../UserBsp/bsp_openmv.h
+dfh_main\patsort_task.o: ..\UserApp\comm_task.h

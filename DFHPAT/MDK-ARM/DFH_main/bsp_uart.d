@@ -39,3 +39,5 @@ dfh_main\bsp_uart.o: D:\software_root\Keil5\ARM\ARMCC\Bin\..\include\string.h
 dfh_main\bsp_uart.o: ..\UserBsp\bsp_TFMiniPlus.h
 dfh_main\bsp_uart.o: ..\UserBsp\remote_msg.h
 dfh_main\bsp_uart.o: ..\UserBsp\bsp_WT53R.h
+dfh_main\bsp_uart.o: ..\UserBsp\bsp_openmv.h
+dfh_main\bsp_uart.o: ..\UserApp\comm_task.h

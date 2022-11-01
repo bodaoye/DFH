@@ -203,7 +203,7 @@ void chassis_task(void const *argu) {
       /* PID计算电机控制电流 */
       chassis_pid_calcu();
       memcpy(motor_cur.chassis_2006_cur, chassis.current_2006, sizeof(chassis.current_2006));
-      osSignalSet(can_msg_send_task_t, CHASSIS_MOTOR_MSG_SEND);
+//      osSignalSet(can_msg_send_task_t, CHASSIS_MOTOR_MSG_SEND);
 			osDelayUntil(&thread_wake_time, 1);
     }
 }

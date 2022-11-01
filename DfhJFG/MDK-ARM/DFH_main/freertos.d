@@ -53,3 +53,4 @@ dfh_main\freertos.o: ..\UserApp\chassis_task.h
 dfh_main\freertos.o: D:\software_root\Keil5\ARM\ARMCC\Bin\..\include\string.h
 dfh_main\freertos.o: ..\UserApp\modeSwitch_task.h
 dfh_main\freertos.o: ..\UserApp\comm_task.h
+dfh_main\freertos.o: ..\UserApp\pick_task.h

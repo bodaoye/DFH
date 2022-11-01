@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 /**
   * @file debug_task.h
   * @version 2.0
@@ -19,7 +18,6 @@ void debug_task(void const *argu);
 void DataWave(UART_HandleTypeDef* huart);
 
 #endif
-=======
 /**
   * @file debug_task.h
   * @version 2.0
@@ -36,7 +34,8 @@ void DataWave(UART_HandleTypeDef* huart);
 #include "stm32f4xx_hal.h"
 #include <stdint.h>
 
-void debug_task(void const *argu);
+void debug_task(void const *argu);
+
 >>>>>>> Stashed changes
 
 void DataWave(UART_HandleTypeDef* huart);

@@ -804,6 +804,16 @@
               <FileType>5</FileType>
               <FilePath>..\UserBsp\bsp_debug.h</FilePath>
             </File>
+            <File>
+              <FileName>bsp_openmv.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UserBsp\bsp_openmv.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_openmv.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\UserBsp\bsp_openmv.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

@@ -15,7 +15,7 @@
 #include <stdint.h>
 #include <string.h>
 #include "bsp_limit.h"
-#define MAXSPEED 9300
+#define MAXSPEED 10300
 #define CURRENT_ANGLE_ABS_DATA 0.5
 
 #define TOWARD_ANGLE1  90
@@ -47,6 +47,11 @@ typedef struct {
 	int16_t  speed_rpm[4];
   
 }chassisSenor_t;
+
+typedef struct {
+  uint8_t openCollect1;//只能打开一个
+  uint8_t enableOpenALL;//可以全部打开
+}visionCtr_t;
 
 typedef struct {
 	/* 停止运动状态机 */
@@ -138,12 +143,17 @@ typedef struct
 	float     wheel_max;
 }chassis_t;
 
+typedef struct {
+   uint8_t end;
+}stopKeyFlag_t;
+
 extern chassisState_e chassisCurrentState;
 extern chassisAction_e chassisNextAction;
 extern chassisSenor_t chassisSenorData;	
 extern chassis_t       chassis;
 extern chassisState_t chassisState;
 extern int findFlagTest;
+extern visionCtr_t visionCtr;
 
 chassisAction_e event_idle(float *currentAngle, float *targetAngle);
 chassisAction_e event_stop(float *currentAngle, float *targetAngle);

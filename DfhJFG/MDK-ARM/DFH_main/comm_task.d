@@ -53,3 +53,6 @@ dfh_main\comm_task.o: ..\UserMathlib\pid.h
 dfh_main\comm_task.o: D:\software_root\Keil5\ARM\ARMCC\Bin\..\include\string.h
 dfh_main\comm_task.o: ../UserBsp/remote_msg.h
 dfh_main\comm_task.o: ../Inc/usart.h
+dfh_main\comm_task.o: ..\UserApp\chassis_task.h
+dfh_main\comm_task.o: ../UserBsp/bsp_limit.h
+dfh_main\comm_task.o: ../Inc/gpio.h

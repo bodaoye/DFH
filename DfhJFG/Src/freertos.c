@@ -29,13 +29,11 @@
 #include "bsp_limit.h"
 
 #include "debug_task.h"
-<<<<<<< Updated upstream
+
 #include "chassis_task.h"
 #include "modeSwitch_task.h"
 #include "comm_task.h"
-=======
 #include "pick_task.h"
->>>>>>> Stashed changes
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -56,14 +54,10 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
 osThreadId debug_task_t;
-<<<<<<< Updated upstream
 osThreadId chassis_task_t;
 osThreadId modeSwitch_task_t;
 osThreadId can_msg_send_task_t;
-
-=======
-osThreadId pick_task_t;
->>>>>>> Stashed changes
+osThreadId vision_send_task_t;
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
 
@@ -141,7 +135,6 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
-<<<<<<< Updated upstream
   
 	osThreadDef(canTask, can_msg_send_task, osPriorityHigh, 0, 512);
   can_msg_send_task_t = osThreadCreate(osThread(canTask), NULL);
@@ -152,14 +145,9 @@ void MX_FREERTOS_Init(void) {
 	debug_task_t = osThreadCreate(osThread(chassisTask), NULL);
 	  osThreadDef(modeSwitchTask, modeSwitch_task, osPriorityNormal, 0, 256);
 	debug_task_t = osThreadCreate(osThread(modeSwitchTask), NULL);
-=======
-
-  osThreadDef(debugTask, debug_task, osPriorityLow, 0, 256);
-  debug_task_t = osThreadCreate(osThread(debugTask), NULL);
   
-  osThreadDef(picktask, pick_task, osPriorityNormal, 0, 256);
-  debug_task_t = osThreadCreate(osThread(debugTask), NULL);
->>>>>>> Stashed changes
+  osThreadDef(visionSendTask, vision_send_task, osPriorityNormal, 0, 256);
+	vision_send_task_t = osThreadCreate(osThread(visionSendTask), NULL);
   
   	taskEXIT_CRITICAL();
   /* USER CODE END RTOS_THREADS */

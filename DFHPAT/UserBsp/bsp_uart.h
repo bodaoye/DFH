@@ -4,17 +4,11 @@
 #include "usart.h"
 
 #define 	  DBUS_HUART        huart1
-#define   	TFHEAD_HUART      huart4		
-#define   	TFTAIL_HUART		  huart3
-#define     WT53RLEFT_HUART   huart6
-#define     WT53RRIGHT_HUART  huart2
-#define   	VISION_HUART		  huart5
-
+#define   	COLOR1_HUART      huart5		
+#define     CHASSIS_HUART     huart6
 #define  	DMA_DBUS_LEN		18
-/*TFminiplus 数据缓存大小*/
-#define TFMINIPLUS_BUFF_SIZE 50
-#define WT53R_BUFF_LEN 50
-
+#define COLOR1_BUFFER_LEN 3
+#define CHASSIS_BUFFER_LEN 4
 void USER_UART_Init(void);
 void USER_UART_IRQHandler(UART_HandleTypeDef *huart);
 void USER_UART_IDLECallback(UART_HandleTypeDef *huart);

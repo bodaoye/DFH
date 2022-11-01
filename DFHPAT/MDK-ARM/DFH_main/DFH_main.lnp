@@ -49,6 +49,7 @@
 "dfh_main\bsp_limit.o"
 "dfh_main\bsp_serverdriver.o"
 "dfh_main\bsp_debug.o"
+"dfh_main\bsp_openmv.o"
 "dfh_main\debug_task.o"
 "dfh_main\chassis_task.o"
 "dfh_main\modeswitch_task.o"

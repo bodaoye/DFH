@@ -15,6 +15,8 @@ enum {
 	L_Right_Tail = 3
 };
 typedef struct {
+	uint8_t firstTrigger;
+	uint8_t secondTrigger;
 	uint8_t key;
 	uint8_t keyflag;
 }limitKey_t;

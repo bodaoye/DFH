@@ -5,7 +5,7 @@
 /**********************************/
 /* !!! 上场前记得初始值改成0 !!! */
 uint32_t       lock_flag = 0;
-ctrl_mode_e 	ctrl_mode = PROTECT_MODE;
+ctrl_mode_e 	ctrl_mode = STANDARD_MODE;
 key_t         rc_ch5;
 
 void modeSwitch_task(void const *argu) {

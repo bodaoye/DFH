@@ -22,9 +22,15 @@ typedef struct
   int16_t chassis_2006_cur[4];
 }motor_current_t;
 
+typedef struct
+{
+  uint8_t openCollectFlag;//只能打开一个
+  uint8_t enableOpenFlag;//可以全部打开
+}chassis_rec_msg_t;
 
 extern motor_current_t motor_cur;
-
+extern chassis_rec_msg_t chassis_rec_msg;
+void getChassisData(uint8_t *Data);
 void can_msg_send_task(void const *argu);
 void msg_fdb_task(void const *argu);
 void supercap_msg_send_task(void const *argu);

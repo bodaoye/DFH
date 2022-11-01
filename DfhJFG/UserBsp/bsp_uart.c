@@ -57,9 +57,9 @@ void USER_UART_IDLECallback(UART_HandleTypeDef *huart)
   if(huart->Instance == USART6)//右小激光数据处理
   {
 //    getWT53Rdis(WT53RArrayRight,char_d_start);
-    Tof_Read_Data(WT53RArrayRight);
+    Tof_Read_Data(WT53RArrayLeft);
     memset(WT53RArrayLeft,0,WT53R_BUFF_LEN);
-    HAL_UART_Receive_DMA(huart, (uint8_t*)WT53RArrayRight, WT53R_BUFF_LEN);
+    HAL_UART_Receive_DMA(huart, (uint8_t*)WT53RArrayLeft, WT53R_BUFF_LEN);
 
   }
 }

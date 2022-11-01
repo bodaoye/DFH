@@ -49,11 +49,7 @@ dfh_main\debug_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers
 dfh_main\debug_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 dfh_main\debug_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 dfh_main\debug_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
-<<<<<<< Updated upstream
 dfh_main\debug_task.o: ..\UserApp\chassis_task.h
 dfh_main\debug_task.o: D:\software_root\Keil5\ARM\ARMCC\Bin\..\include\string.h
 dfh_main\debug_task.o: ../UserBsp/bsp_limit.h
 dfh_main\debug_task.o: ../Inc/gpio.h
-=======
-dfh_main\debug_task.o: ../UserBsp/bsp_ServerDriver.h
->>>>>>> Stashed changes

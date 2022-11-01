@@ -15,11 +15,11 @@
 #include "string.h"
 #include "remote_msg.h"
 #include "usart.h"
+#include "chassis_task.h"
 
-
-
+visionMessage_t visionMessage;
 motor_current_t   motor_cur;
-
+uint8_t vision_msg_buff[VISION_LEN] = {0};
 //  uint8_t supercap_control_msg[7] = {0};
   
 /*
@@ -43,5 +43,17 @@ can_msg_send_task(void const *argu) {
 	}
 }
 
+void vision_send_task(void const *argu) {
+  uint32_t mode_wake_time = osKernelSysTick();
+  for(;;) {
+   visionMessage.SOF = 0x11;
+   visionMessage.openCollectFlag = visionCtr.openCollect1;
+   visionMessage.enableOpenFlag = visionCtr.enableOpenALL;
+   visionMessage.EOF = 0x2b;
+   memcpy(vision_msg_buff, &visionMessage, VISION_LEN);
+   HAL_UART_Transmit_DMA(&huart5, vision_msg_buff, VISION_LEN);
+   osDelayUntil(&mode_wake_time,1);
+  }
 
+}
 
